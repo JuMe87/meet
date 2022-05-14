@@ -4,7 +4,7 @@ This is a  serverless,   progressive  web  application  (PWA)  with  React  usin
 
 # Key Features: 
 
-- Filter  events  by  city.  
+-  Filter  events  by  city.  
 -  Show/hide  event  details. 
 -  Specify  number  of  events.  
 -  Use  the  app  when  offline. 
@@ -16,9 +16,9 @@ This is a  serverless,   progressive  web  application  (PWA)  with  React  usin
 FEATURE 1: FILTER EVENTS BY CITY
 
 SCENARIO 1: WHEN USER HASN’T SEARCHED FOR A CITY, SHOW UPCOMING EVENTS FROM ALL CITIES.
-- Given user hasn’t searched for any city
-- When the user opens the app
-- Then the user should see a list of all upcoming events
+-  Given user hasn’t searched for any city
+-  When the user opens the app
+-  Then the user should see a list of all upcoming events
 
 SCENARIO 2: USER SHOULD SEE A LIST OF SUGGESTIONS WHEN THEY SEARCH FOR A CITY.
 - Given the main page is open
@@ -45,7 +45,7 @@ SCENARIO 2: USER CAN EXPAND AN EVENT TO SEE ITS DETAILS
 - As a user,
 - I should be able to expand an event
 - so that I can see its details. 
--
+
 - GIVEN a user hasn't opened an event yet
 - WHEN using the app
 - THEN the user must be able to expand an event to see its details.
@@ -69,7 +69,6 @@ SCENARIO 1:WHEN USER HASN'T SPECIFIED A NUMBER, 32 IS THE DEFAULT NUMBER
 - GIVEN the user hasn't specified a number of events
 - WHEN using the app
 - THEN 32 is the default number.
-
 
 SCENARIO 2: USER CAN CHANGE THE NUMBER OF EVENTS THEY WANT TO SEE
 - As a user,
