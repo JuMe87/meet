@@ -1,4 +1,15 @@
-# meet
+# meet App
+
+This is a  serverless,   progressive  web  application  (PWA)  with  React  using  a  test-driven  development  (TDD)  technique in order to enable user to see events taking place in their city.  The  application  uses  the  Google  Calendar  API  to  fetch  upcoming  events.  
+
+# Key Features: 
+
+● Filter  events  by  city.  
+● Show/hide  event  details. 
+● Specify  number  of  events.  
+● Use  the  app  when  offline. 
+● Add  an  app  shortcut  to  the  home  screen.  
+● View  a  chart  showing  the  number  of  upcoming  events  by  city. 
 
 # Features and User Stories for each scenario
 
