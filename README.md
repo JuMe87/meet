@@ -33,83 +33,83 @@ SCENARIO 3: USER CAN SELECT A CITY FROM THE SUGGESTED LIST.
 FEATURE 2: SHOW/HIDE AN EVENT'S DETAILS
 
 SCENARIO 1: AN EVENT ELEMENT IS COLLAPSED BY DEFAULT
-- AS A USER,
-- I SHOULD BE ABLE TO SEE AN EVENT ELEMENT COLLAPSED BY DEFAULT
-- SO THAT I HAVE AN OVERVIEW OF ALL EVENTS FIRST BEFORE DIVING INTO DETAILS.
+- As a user,
+- I should be able to see an event element collapsed by default
+- so that I have an overview of all events first before diving into details. 
 
-- GIVEN A USER HASN’T CLICKED ON AN EVENT ELEMENT YET
-- WHEN USING THE APP
-- THEN AN EVENT ELEMENT SHOULD BE COLLAPSED BY DEFAULT.
+- GIVEN a user hasn't clicked on an event element yet
+- WHEN using the app
+- THEN an event element should be collapsed by default. 
 
 SCENARIO 2: USER CAN EXPAND AN EVENT TO SEE ITS DETAILS
-- AS A USER,
-- I SHOULD BE ABLE TO EXPAND AN EVENT
-- SO THAT I CAN SEE ITS DETAILS.
-
-- GIVEN A USER HASN’T OPENED AN EVENT YET
-- WHEN USING THE APP
-- THEN THE USER MUST BE ABLE TO EXPAND AN EVENT TO SEE ITS DETAILS.
+- As a user,
+- I should be able to expand an event
+- so that I can see its details. 
+-
+- GIVEN a user hasn't opened an event yet
+- WHEN using the app
+- THEN the user must be able to expand an event to see its details.
 
 SCENARIO 3: USER CAN COLLAPSE AN EVENT TO HIDE ITS DETAILS
-- AS A USER,
-- I SHOULD BE ABLE TO COLLAPSE AN EVENT
-- SO THAT I CAN CLOSE ITS DETAILS AFTER HAVING READ THEM.
+- A a user,
+- I should be able to collapse an event,
+- so that I can close its details after having read them.
 
-- GIVEN A USER HAS OPENED AN EVENT
-- WHEN SEARCHING FOR EVENTS
-- THEN THE USER MUST BE ABLE TO COLLAPSE AN EVENT TO HIDE ITS DETAILS.
+- GIVEN a user has opened an event
+- WHEN searching for events
+- THEN the user must be able to collapse an event ot hide its details.
 
 FEATURE 3: SPECIFY NUMBER OF EVENTS
 
 SCENARIO 1:WHEN USER HASN'T SPECIFIED A NUMBER, 32 IS THE DEFAULT NUMBER
-- AS A USER,
-- I SHOULD BE ABLE TO SEE 32 EVENTS
-- SO THAT I’M NOT OVERWHELMED WITH THE LIST OF EVENTS.
+- As a user,
+- I should be able to see 32 events,
+- so that I'm not overwhelmed with the list's length of events.
 
-- GIVEN THE USER HASN’T SPECIFIED A NUMBER OF EVENTS
-- WHEN USING THE APP
-- THEN 32 IS THE DEFAULT NUMBER.
+- GIVEN the user hasn't specified a number of events
+- WHEN using the app
+- THEN 32 is the default number.
 
 
 SCENARIO 2: USER CAN CHANGE THE NUMBER OF EVENTS THEY WANT TO SEE
-- AS A USER,
-- I SHOULD BE ABLE TO CHANGE THE NUMBER OF EVENTS I WANT TO SEE
-- SO THAT I CAN GEAR THE APP TOWARDS MY INDIVIDUAL NEEDS.
+- As a user,
+- I should be able to change the number of events I want to see
+- so that I can gear the app towards my individual needs.
 
-- GIVEN THE USER WANTED TO CHANGE THE NUMBER OF EVENTS
-- WHEN USING THE APP
-- THEN THE USER SHOULD BE ABLE TO CHANGE THE NUMBER OF EVENTS HE WANTS TO SEE.
+- GIVEN the user wanted to change the number of events he wanted to see
+- WHEN using the app
+- THEN the user should be able to do so. 
 
 FEATURE 4: USE THE APP WHEN OFFLINE
 
 SCENARIO 1: SHOW CACHED DATA WHEN THERE IS NO INTERNET CONNECTION
-- AS A USER,
-- I SHOULD BE ABLE TO ACCESS THE APP AND ITS INFORMATION 
-- SO THAT I CAN ACCESS THE INFORMATION EVEN WHEN THERE IS NO INTERNET CONNECTION.
+- As a user,
+- I should be able to access the app and its information 
+- even when there is no internet connection.
 
-- GIVEN THE USER HAS NO INTERNET CONNECTION
-- WHEN USING THE APP
-- THEN THE APP MUST SHOW CACHED DATA.
+- GIVEN the user has no internet connection
+- WHEN using the app
+- THEN the app must show the cached data.
 
 SCENARIO 2: SHOW ERROR WHEN USER CHANGES THE SETTINGS (CITY, TIME RANGE)
-- AS A USER,
-- I SHOULD BE ABLE TO SEE AN ERROR MESSAGE
-- SO THAT I’M AWARE OF THAT I CHANGED THE SETTINGS SUCH AS CITY OR TIME RANGE.
+- As a user,
+- I should be able to see an error message
+- so that I'm aware of the fact that I changed my user seetings such as city or time range. 
 
-- GIVEN THE USER HAS CHANGED THE SETTINGS
-- WHEN USING THE APP
-- THEN THE APP MUST SHOW AN ERROR MESSAGE.
+- GIVEN the user has changed his settings
+- WHEN using the app
+- THEN the app must show an error message.
 
 FEATURE 5: DATA VISUALIZATION
 
 SCENARIO 1: SHOW A CHART WITH THE NUMBER OF UPCOMING EVENTS IN EACH CITY
-- AS A USER
-- I SHOULD BE ABLE TO SEE A CHART WITH THE NUMBER OF UPCOMING EVENTS IN EACH CITY
-- SO THAT I GET A QUICK OVERVIEW OF THE NUMBER OF EVENTS TAKING PLACE.
+- As a user
+- I should be able to see a chart with the number of upcoming events in each city
+- so that I get a quick overview of the number of events taking place.
 
-- GIVEN THE USER WANTED TO KNOW THE NUMBER OF UPCOMING EVENTS IN EACH CITY
-- WHEN THE USER OPENS THE APP
-- THEN THE USER SHOULD SEE A CHART WITH THE NUMBER OF UPCOMING EVENTS IN EACH CITY.
+- GIVEN the user wanted to know the number of upcoming events in each city
+- WHEN the user opens the app
+- THEN the user should see a chart with the number of upcoming events in each city.
 
 
 
