@@ -53,9 +53,9 @@ This is a  serverless,   progressive  web  application  (PWA)  with  React  usin
 -  so that I can see its details. 
 
  **Gherkin description**:
--  GIVEN a user hasn't opened an event yet
+-  Givena user hasn't opened an event yet
 -  When the user opens the app
--  THEN the user must be able to click and expand an event to see its details.
+-  Then the user must be able to click and expand an event to see its details.
 
 ### SCENARIO 3: USER CAN COLLAPSE AN EVENT TO HIDE ITS DETAILS
 
@@ -65,9 +65,9 @@ This is a  serverless,   progressive  web  application  (PWA)  with  React  usin
 -  so that I can close its details after having read them.
 
  **Gherkin description**:
--  GIVEN a user has clicked and expanded an event element
--  WHEN the user wants to read the details of an event
--  THEN the user must be able to collapse an event and hide its details after having read the details.
+-  Given a user has clicked and expanded an event element
+-  When the user wants to read the details of an event
+-  Then the user must be able to collapse an event and hide its details after having read the details.
 
 ## FEATURE 3: SPECIFY NUMBER OF EVENTS
 
@@ -79,9 +79,9 @@ This is a  serverless,   progressive  web  application  (PWA)  with  React  usin
 -  so that I'm not overwhelmed with the amount of events.
 
 **Gherkin description**:
--  GIVEN the user hasn't specified a number of events he wants to see 
--  WHEN using the app
--  THEN the user should see 32 events by default.
+-  Given the user hasn't specified a number of events he wants to see 
+-  When using the app
+-  Then the user should see 32 events by default.
 
 ### SCENARIO 2: USER CAN CHANGE THE NUMBER OF EVENTS THEY WANT TO SEE
 
@@ -91,9 +91,9 @@ This is a  serverless,   progressive  web  application  (PWA)  with  React  usin
 -  so that I can gear the app towards my individual needs.
 
 **Gherkin description**:
--  GIVEN the user wanted to change the number of events from 32 to the number of his choice
--  WHEN using the app
--  THEN the user should be able to do so by changing the settings. 
+-  Given the user wanted to change the number of events from 32 to the number of his choice
+-  When using the app
+-  Then the user should be able to do so by changing the settings. 
 
 ## FEATURE 4: USE THE APP WHEN OFFLINE
 
@@ -105,9 +105,9 @@ This is a  serverless,   progressive  web  application  (PWA)  with  React  usin
 -  even when there is no internet connection.
 
  **Gherkin description**:
--  GIVEN the user has no internet connection
--  WHEN using the app
--  THEN the app must show the cached data so the user is still able to access the information on his app.
+-  Given the user has no internet connection
+-  When using the app
+-  Then the app must show the cached data so the user is still able to access the information on his app.
 
 ### SCENARIO 2: SHOW ERROR WHEN USER CHANGES THE SETTINGS (CITY, TIME RANGE)
 
@@ -117,9 +117,9 @@ This is a  serverless,   progressive  web  application  (PWA)  with  React  usin
 -  so that I'm aware of the fact that I changed my user seetings such as city or time range. 
 
  **Gherkin description**:
--  GIVEN the user has changed his settings suchs as city or time range
--  WHEN using the app
--  THEN the app must show an error message.
+-  Given the user has changed his settings suchs as city or time range
+-  When using the app
+-  Then the app must show an error message.
 
 ## FEATURE 5: DATA VISUALIZATION
 
@@ -131,9 +131,9 @@ This is a  serverless,   progressive  web  application  (PWA)  with  React  usin
 -  so that I get a quick overview of the number of events taking place.
 
 **Gherkin description**:
--  GIVEN the user wanted to know the number of upcoming events in each city
--  WHEN the user opens the app
--  THEN the user should see a chart with the number of upcoming events in each city.
+-  Given the user wanted to know the number of upcoming events in each city
+-  When the user opens the app
+-  Then the user should see a chart with the number of upcoming events in each city.
 
 
 
