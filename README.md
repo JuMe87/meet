@@ -13,102 +13,127 @@ This is a  serverless,   progressive  web  application  (PWA)  with  React  usin
 
 # Features and User Stories for each Scenario
 
-FEATURE 1: FILTER EVENTS BY CITY
+## FEATURE 1: FILTER EVENTS BY CITY
 
-SCENARIO 1: WHEN USER HASN’T SEARCHED FOR A CITY, SHOW UPCOMING EVENTS FROM ALL CITIES.
+### SCENARIO 1: WHEN USER HASN’T SEARCHED FOR A CITY, SHOW UPCOMING EVENTS FROM ALL CITIES.
 -  Given user hasn’t searched for any city
 -  When the user opens the app
 -  Then the user should see a list of all upcoming events
 
-SCENARIO 2: USER SHOULD SEE A LIST OF SUGGESTIONS WHEN THEY SEARCH FOR A CITY.
+### SCENARIO 2: USER SHOULD SEE A LIST OF SUGGESTIONS WHEN THEY SEARCH FOR A CITY.
 - Given the main page is open
 - When user starts typing in the city textbox
 - Then the user should see a list of cities (suggestions) that match what they’ve typed
 
-SCENARIO 3: USER CAN SELECT A CITY FROM THE SUGGESTED LIST.
+### SCENARIO 3: USER CAN SELECT A CITY FROM THE SUGGESTED LIST.
 - Given the user was typing “Berlin” in the city textbox and the list of suggested cities is showing
 - When the user selects a city (e.g., “Berlin, Germany”) from the list
 - Then their city should be changed to that city (i.e., “Berlin, Germany”) and the user should receive a list of upcoming events in that city
 
-FEATURE 2: SHOW/HIDE AN EVENT'S DETAILS
+## FEATURE 2: SHOW/HIDE AN EVENT'S DETAILS
 
-SCENARIO 1: AN EVENT ELEMENT IS COLLAPSED BY DEFAULT
-- As a user,
-- I should be able to see an event element collapsed by default
-- so that I have an overview of all events first before diving into details. 
+### SCENARIO 1: AN EVENT ELEMENT IS COLLAPSED BY DEFAULT
 
-- GIVEN a user hasn't clicked on an event element yet
-- WHEN using the app
-- THEN an event element should be collapsed by default. 
+**User Story**:
+-  As a user,
+-  I should be able to see an event element collapsed by default
+-  so that I have an overview of all events first before diving into details.
 
-SCENARIO 2: USER CAN EXPAND AN EVENT TO SEE ITS DETAILS
-- As a user,
-- I should be able to expand an event
-- so that I can see its details. 
+ **Gherkin description**:
 
-- GIVEN a user hasn't opened an event yet
-- WHEN using the app
-- THEN the user must be able to expand an event to see its details.
+-  Given a user hasn't clicked on an event element yet
+-  When the user opens the app
+-  Then the user should see an event element collapsed by default
 
-SCENARIO 3: USER CAN COLLAPSE AN EVENT TO HIDE ITS DETAILS
-- A a user,
-- I should be able to collapse an event,
-- so that I can close its details after having read them.
+### SCENARIO 2: USER CAN EXPAND AN EVENT TO SEE ITS 
 
-- GIVEN a user has opened an event
-- WHEN searching for events
-- THEN the user must be able to collapse an event ot hide its details.
+**User Story**:
+-  As a user,
+-  I should be able to expand an event
+-  so that I can see its details. 
 
-FEATURE 3: SPECIFY NUMBER OF EVENTS
+ **Gherkin description**:
+-  GIVEN a user hasn't opened an event yet
+-  When the user opens the app
+-  THEN the user must be able to click and expand an event to see its details.
 
-SCENARIO 1:WHEN USER HASN'T SPECIFIED A NUMBER, 32 IS THE DEFAULT NUMBER
-- As a user,
-- I should be able to see 32 events,
-- so that I'm not overwhelmed with the list's length of events.
+### SCENARIO 3: USER CAN COLLAPSE AN EVENT TO HIDE ITS DETAILS
 
-- GIVEN the user hasn't specified a number of events
-- WHEN using the app
-- THEN 32 is the default number.
+**User Story**:
+-  As a user,
+-  I should be able to collapse an event,
+-  so that I can close its details after having read them.
 
-SCENARIO 2: USER CAN CHANGE THE NUMBER OF EVENTS THEY WANT TO SEE
-- As a user,
-- I should be able to change the number of events I want to see
-- so that I can gear the app towards my individual needs.
+ **Gherkin description**:
+-  GIVEN a user has clicked and expanded an event element
+-  WHEN the user wants to read the details of an event
+-  THEN the user must be able to collapse an event and hide its details after having read the details.
 
-- GIVEN the user wanted to change the number of events he wanted to see
-- WHEN using the app
-- THEN the user should be able to do so. 
+## FEATURE 3: SPECIFY NUMBER OF EVENTS
 
-FEATURE 4: USE THE APP WHEN OFFLINE
+### SCENARIO 1:WHEN USER HASN'T SPECIFIED A NUMBER, 32 IS THE DEFAULT NUMBER
 
-SCENARIO 1: SHOW CACHED DATA WHEN THERE IS NO INTERNET CONNECTION
-- As a user,
-- I should be able to access the app and its information 
-- even when there is no internet connection.
+**User Story**:
+-  As a user,
+-  I should be able to see 32 events,
+-  so that I'm not overwhelmed with the amount of events.
 
-- GIVEN the user has no internet connection
-- WHEN using the app
-- THEN the app must show the cached data.
+**Gherkin description**:
+-  GIVEN the user hasn't specified a number of events he wants to see 
+-  WHEN using the app
+-  THEN the user should see 32 events by default.
 
-SCENARIO 2: SHOW ERROR WHEN USER CHANGES THE SETTINGS (CITY, TIME RANGE)
-- As a user,
-- I should be able to see an error message
-- so that I'm aware of the fact that I changed my user seetings such as city or time range. 
+### SCENARIO 2: USER CAN CHANGE THE NUMBER OF EVENTS THEY WANT TO SEE
 
-- GIVEN the user has changed his settings
-- WHEN using the app
-- THEN the app must show an error message.
+**User Story**:
+-  As a user,
+-  I should be able to change the number of events I want to see
+-  so that I can gear the app towards my individual needs.
 
-FEATURE 5: DATA VISUALIZATION
+**Gherkin description**:
+-  GIVEN the user wanted to change the number of events from 32 to the number of his choice
+-  WHEN using the app
+-  THEN the user should be able to do so by changing the settings. 
 
-SCENARIO 1: SHOW A CHART WITH THE NUMBER OF UPCOMING EVENTS IN EACH CITY
-- As a user
-- I should be able to see a chart with the number of upcoming events in each city
-- so that I get a quick overview of the number of events taking place.
+## FEATURE 4: USE THE APP WHEN OFFLINE
 
-- GIVEN the user wanted to know the number of upcoming events in each city
-- WHEN the user opens the app
-- THEN the user should see a chart with the number of upcoming events in each city.
+### SCENARIO 1: SHOW CACHED DATA WHEN THERE IS NO INTERNET CONNECTION
+
+**User Story**:
+-  As a user,
+-  I should be able to access the app and its information 
+-  even when there is no internet connection.
+
+ **Gherkin description**:
+-  GIVEN the user has no internet connection
+-  WHEN using the app
+-  THEN the app must show the cached data so the user is still able to access the information on his app.
+
+### SCENARIO 2: SHOW ERROR WHEN USER CHANGES THE SETTINGS (CITY, TIME RANGE)
+
+**User Story**:
+-  As a user,
+-  I should be able to see an error message
+-  so that I'm aware of the fact that I changed my user seetings such as city or time range. 
+
+ **Gherkin description**:
+-  GIVEN the user has changed his settings suchs as city or time range
+-  WHEN using the app
+-  THEN the app must show an error message.
+
+## FEATURE 5: DATA VISUALIZATION
+
+### SCENARIO 1: SHOW A CHART WITH THE NUMBER OF UPCOMING EVENTS IN EACH CITY
+
+**User Story**:
+-  As a user
+-  I should be able to see a chart with the number of upcoming events in each city
+-  so that I get a quick overview of the number of events taking place.
+
+**Gherkin description**:
+-  GIVEN the user wanted to know the number of upcoming events in each city
+-  WHEN the user opens the app
+-  THEN the user should see a chart with the number of upcoming events in each city.
 
 
 
