@@ -53,7 +53,7 @@ This is a  serverless,   progressive  web  application  (PWA)  with  React  usin
 -  so that I can see its details. 
 
  **Gherkin description**:
--  Givena user hasn't opened an event yet
+-  Given a user hasn't opened an event yet
 -  When the user opens the app
 -  Then the user must be able to click and expand an event to see its details.
 
