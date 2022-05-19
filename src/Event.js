@@ -40,7 +40,7 @@ class Event extends Component {
                                 }-details`}
                                 onClick={this.handleClick}
                             >
-                                {collapsed ? "Show Details" : "Hide Details"}
+                                {collapsed ? "Zeige Details" : "Hide Details"}
                             </Button>
 
                             {!collapsed && (
