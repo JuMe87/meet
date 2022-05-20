@@ -40,15 +40,11 @@ class Event extends Component {
                                 }-details`}
                                 onClick={this.handleClick}
                             >
-                                {collapsed ? "Zeige Details" : "Hide Details"}
+                                {collapsed ? "Show Details" : "Hide Details"}
                             </Button>
 
                             {!collapsed && (
-                                <div
-                                    className={`extra-details ${
-                                        this.state.collapsed ? "hide" : "show"
-                                    }`}
-                                >
+                                <div className="extra-details">
                                     <Card.Subtitle className="card-title">
                                         About the event:
                                     </Card.Subtitle>
