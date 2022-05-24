@@ -46,11 +46,11 @@ This is a serverless, progressive web application (PWA) with React using a  tes
 
 **Gherkin description**:
 
--   Given a user hasn't clicked on an event element yet
--   When the user opens the app
+-   Given a user is on the app's main page
+-   When an event is displayed
 -   Then the user should see an event element collapsed by default
 
-### SCENARIO 2: USER CAN EXPAND AN EVENT TO SEE ITS
+### SCENARIO 2: USER CAN EXPAND AN EVENT TO SEE ITS DETAILS
 
 **User Story**:
 
@@ -60,7 +60,7 @@ This is a serverless, progressive web application (PWA) with React using a  tes
 
 **Gherkin description**:
 
--   Given a user hasn't opened an event yet
+-   Given the user has been shown a list of events
 -   When the user opens the app
 -   Then the user must be able to click and expand an event to see its details.
 
@@ -74,9 +74,9 @@ This is a serverless, progressive web application (PWA) with React using a  tes
 
 **Gherkin description**:
 
--   Given a user has clicked and expanded an event element
--   When the user wants to read the details of an event
--   Then the user must be able to collapse an event and hide its details after having read the details.
+-   Given a user has clicked and expanded an event element to read its details
+-   When the user wants to close the element by clicking on the "close" button
+-   Then the user must be able to collapse an event and hide its details.
 
 ## FEATURE 3: SPECIFY NUMBER OF EVENTS
 
