@@ -24,7 +24,6 @@ class NumberOfEvents extends Component {
     render() {
         return (
             <div className="numberOfEvents">
-                <div className="numberOfEventsAlert"></div>
                 <input
                     className="inputNumberOfEvents"
                     type="number"
