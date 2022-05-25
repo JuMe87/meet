@@ -45,7 +45,7 @@ class App extends Component {
                 this.setState({
                     events: locationEvents.slice(0, this.state.numberOfEvents),
                     currentLocation: location,
-                    numberOfEvents: eventCount,
+                    // numberOfEvents: eventCount,
                 })
             }
         })
@@ -68,6 +68,10 @@ class App extends Component {
 
         return (
             <div className="App">
+                <h1 className="app-title title">Welcome to Meet!</h1>
+                <h2 className="sub-heading">
+                    To browse through events, start by typing a city!
+                </h2>
                 <CitySearch
                     locations={locations}
                     updateEvents={this.updateEvents}
