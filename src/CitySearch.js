@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import NumberOfEvents from "./NumberOfEvents"
 
 class CitySearch extends Component {
     state = {
@@ -27,15 +28,19 @@ class CitySearch extends Component {
     render() {
         return (
             <div className="CitySearch">
-                <input
-                    type="text"
-                    className="city"
-                    value={this.state.query}
-                    onChange={this.handleInputChanged}
-                    onFocus={() => {
-                        this.setState({ showSuggestions: true })
-                    }}
-                />
+                <form>
+                    <input
+                        type="text"
+                        className="city"
+                        placeholder="Search for a city"
+                        value={this.state.query}
+                        onChange={this.handleInputChanged}
+                        onFocus={() => {
+                            this.setState({ showSuggestions: true })
+                        }}
+                    />
+                </form>
+
                 <ul
                     className="suggestions"
                     style={
@@ -44,6 +49,7 @@ class CitySearch extends Component {
                 >
                     {this.state.suggestions.map((suggestion) => (
                         <li
+                            className="list-item"
                             key={suggestion}
                             onClick={() => this.handleItemClicked(suggestion)}
                         >
