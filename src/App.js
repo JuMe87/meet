@@ -51,20 +51,34 @@ class App extends Component {
         })
     }
 
+    getData = () => {
+        const { locations, events } = this.state
+        const data = locations.map((location) => {
+            const number = events.filter(
+                (event) => event.location === location
+            ).length
+            const city = location.split(", ").shift()
+            return { city, number }
+        })
+        return data
+    }
+
     render() {
+        const { events, locations, numberOfEvents } = this.state
+
         return (
             <div className="App">
                 <CitySearch
-                    locations={this.state.locations}
+                    locations={locations}
                     updateEvents={this.updateEvents}
                 />
-                <EventList
-                    events={this.state.events}
-                    numberOfEvents={this.state.numberOfEvents}
-                />
                 <NumberOfEvents
-                    numberOfEvents={this.state.numberOfEvents}
+                    numberOfEvents={numberOfEvents}
                     updateNumberOfEvents={this.updateNumberOfEvents}
+                />
+                <EventList
+                    events={events}
+                    numberOfEvents={this.state.numberOfEvents}
                 />
             </div>
         )
