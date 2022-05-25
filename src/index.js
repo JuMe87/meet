@@ -25,5 +25,3 @@ serviceWorkerRegistration.unregister()
 reportWebVitals()
 
 atatus.config("2ba74cfa5bd747f1b8fd8fcb06190eb5").install()
-
-atatus.notify(new Error("Test Atatus Setup"))
