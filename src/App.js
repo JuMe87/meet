@@ -16,9 +16,12 @@ class App extends Component {
     componentDidMount() {
         this.mounted = true
         getEvents().then((events) => {
-            if (this.mounted) {
-                this.setState({ events, locations: extractLocations(events) })
-            }
+            let sliceNumber = this.state.numberOfEvents
+
+            this.setState({
+                locations: extractLocations(events),
+                events: events.slice(0, sliceNumber),
+            })
         })
     }
 
@@ -31,23 +34,27 @@ class App extends Component {
             {
                 numberOfEvents,
             },
-            this.updateEvents(this.state.locations, numberOfEvents)
+            this.updateEvents(this.state.savedLocation, numberOfEvents)
         )
     }
 
-    updateEvents = (location, eventCount) => {
+    updateEvents = (
+        location = this.state.savedLocation,
+        number = this.state.numberOfEvents
+    ) => {
         getEvents().then((events) => {
-            const locationEvents =
+            let locationEvents =
+                location === "" ||
+                location === null ||
+                location === undefined ||
                 location === "all"
                     ? events
                     : events.filter((event) => event.location === location)
-            if (this.mounted) {
-                this.setState({
-                    events: locationEvents.slice(0, this.state.numberOfEvents),
-                    currentLocation: location,
-                    numberOfEvents: eventCount,
-                })
-            }
+
+            this.setState({
+                events: locationEvents.slice(0, number),
+                numberOfEvents: number,
+            })
         })
     }
 
@@ -60,6 +67,7 @@ class App extends Component {
             const city = location.split(", ").shift()
             return { city, number }
         })
+        console.log(data)
         return data
     }
 

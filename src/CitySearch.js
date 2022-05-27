@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import NumberOfEvents from "./NumberOfEvents"
 
 class CitySearch extends Component {
     state = {
