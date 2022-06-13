@@ -26,10 +26,7 @@ class NumberOfEvents extends Component {
     render() {
         return (
             <div className="numberOfEvents">
-                <div className="numberOfEventsAlert">
-                    <ErrorAlert text={this.state.errorText} />
-                </div>
-
+                <ErrorAlert text={this.state.errorText} />
                 <input
                     className="inputNumberOfEvents"
                     step="1"
