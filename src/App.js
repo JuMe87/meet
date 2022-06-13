@@ -5,6 +5,7 @@ import EventList from "./EventList"
 import CitySearch from "./CitySearch"
 import NumberOfEvents from "./NumberOfEvents"
 import { getEvents, extractLocations } from "./api"
+import { OfflineAlert } from "./Alert"
 
 class App extends Component {
     state = {
@@ -23,6 +24,16 @@ class App extends Component {
                 events: events.slice(0, sliceNumber),
             })
         })
+
+        if (!navigator.onLine) {
+            this.setState({
+                offlineText: "You are currently offline.",
+            })
+        } else {
+            this.setState({
+                offlineText: "",
+            })
+        }
     }
 
     componentWillUnmount() {
@@ -72,7 +83,7 @@ class App extends Component {
     }
 
     render() {
-        const { events, locations, numberOfEvents } = this.state
+        const { events, locations, numberOfEvents, offlineText } = this.state
 
         return (
             <div className="App">
@@ -91,6 +102,8 @@ class App extends Component {
                     events={events}
                     numberOfEvents={this.state.numberOfEvents}
                 />
+
+                <OfflineAlert text={offlineText} />
             </div>
         )
     }
