@@ -29,6 +29,7 @@ class InfoAlert extends Alert {
     }
 }
 
+// Not implemented yet
 class WarningAlert extends Alert {
     constructor(props) {
         super(props)
