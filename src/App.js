@@ -7,6 +7,14 @@ import NumberOfEvents from "./NumberOfEvents"
 import { getEvents, extractLocations, checkToken, getAccessToken } from "./api"
 import { OfflineAlert } from "./Alert"
 import WelcomeScreen from "./WelcomeScreen"
+import {
+    ScatterChart,
+    Scatter,
+    XAxis,
+    YAxis,
+    CartesianGrid,
+    Tooltip,
+} from "recharts"
 
 class App extends Component {
     state = {
@@ -100,7 +108,6 @@ class App extends Component {
             const city = location.split(", ").shift()
             return { city, number }
         })
-        console.log(data)
         return data
     }
 
@@ -123,6 +130,31 @@ class App extends Component {
                     numberOfEvents={numberOfEvents}
                     updateNumberOfEvents={this.updateNumberOfEvents}
                 />
+
+                <h4>Events in each city</h4>
+
+                <ScatterChart
+                    width={400}
+                    height={400}
+                    margin={{
+                        top: 20,
+                        right: 20,
+                        bottom: 20,
+                        left: 20,
+                    }}
+                >
+                    <CartesianGrid />
+                    <XAxis type="category" dataKey="city" name="city" />
+                    <YAxis
+                        type="number"
+                        dataKey="number"
+                        name="number of events"
+                        allowDecimals={false}
+                    />
+                    <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+                    <Scatter data={this.getData()} fill="#8884d8" />
+                </ScatterChart>
+
                 <EventList
                     events={events}
                     numberOfEvents={this.state.numberOfEvents}
