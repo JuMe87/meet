@@ -30,13 +30,16 @@ const getToken = async (code) => {
 }
 
 export const checkToken = async (accessToken) => {
-    const result = await fetch(
-        `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
-    )
-        .then((res) => res.json())
-        .catch((error) => error.json())
-
-    return result
+    try {
+        const result = await fetch(
+            `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
+        )
+        const parsed = await result.json()
+        return !parsed.error
+    } catch (e) {
+        console.error("failed to fetch token info", e)
+        return false
+    }
 }
 
 const removeQuery = () => {
@@ -88,9 +91,9 @@ export const getEvents = async () => {
 
 export const getAccessToken = async () => {
     const accessToken = localStorage.getItem("access_token")
-    const tokenCheck = accessToken && (await checkToken(accessToken))
+    const isTokenValid = accessToken && (await checkToken(accessToken))
 
-    if (!accessToken || tokenCheck.error) {
+    if (!accessToken || !isTokenValid) {
         await localStorage.removeItem("access_token")
         const searchParams = new URLSearchParams(window.location.search)
         const code = await searchParams.get("code")

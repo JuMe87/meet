@@ -6,7 +6,7 @@ import CitySearch from "./CitySearch"
 import NumberOfEvents from "./NumberOfEvents"
 import { getEvents, extractLocations, checkToken, getAccessToken } from "./api"
 import { OfflineAlert } from "./Alert"
-// import WelcomeScreen from "./WelcomeScreen"
+import WelcomeScreen from "./WelcomeScreen"
 
 class App extends Component {
     state = {
@@ -19,9 +19,7 @@ class App extends Component {
     async componentDidMount() {
         this.mounted = true
         const accessToken = localStorage.getItem("access_token")
-        const isTokenValid = (await checkToken(accessToken)).error
-            ? false
-            : true
+        const isTokenValid = await checkToken(accessToken)
         const searchParams = new URLSearchParams(window.location.search)
         const code = searchParams.get("code")
         this.setState({ showWelcomeScreen: !(code || isTokenValid) })
@@ -120,12 +118,12 @@ class App extends Component {
 
                 <OfflineAlert text={offlineText} />
 
-                {/* <WelcomeScreen
+                <WelcomeScreen
                     showWelcomeScreen={this.state.showWelcomeScreen}
                     getAccessToken={() => {
                         getAccessToken()
                     }}
-                /> */}
+                />
             </div>
         )
     }
