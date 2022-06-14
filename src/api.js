@@ -71,8 +71,9 @@ export const getEvents = async () => {
     }
 
     const token = await getAccessToken()
+    const isTokenValid = await checkToken(token)
 
-    if (token) {
+    if (token && isTokenValid) {
         removeQuery()
         const url =
             "https://cwtcssklg9.execute-api.eu-central-1.amazonaws.com/dev/api/get-events" +

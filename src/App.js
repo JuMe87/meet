@@ -23,7 +23,7 @@ class App extends Component {
         const searchParams = new URLSearchParams(window.location.search)
         const code = searchParams.get("code")
         this.setState({ showWelcomeScreen: !(code || isTokenValid) })
-        if ((code || isTokenValid) && this.mounted) {
+        if (code && this.mounted) {
             getEvents().then((events) => {
                 if (this.mounted) {
                     this.setState({
@@ -35,15 +35,29 @@ class App extends Component {
         }
 
         if (!navigator.onLine) {
-            this.setState({
-                offlineText:
-                    "Your are currently offline. Event details might be out of date.",
-            })
+            this.setToOffline()
         } else {
-            this.setState({
-                offlineText: "",
-            })
+            this.setToOnline()
         }
+        window.addEventListener("offline", (event) => this.setToOffline())
+        window.addEventListener("online", (event) => this.setToOnline())
+    }
+
+    setToOffline() {
+        this.setState({
+            showWelcomeScreen: false,
+            offlineText:
+                "Your are currently offline. Event details might be out of date.",
+        })
+    }
+
+    async setToOnline() {
+        const accessToken = localStorage.getItem("access_token")
+        const isTokenValid = await checkToken(accessToken)
+        this.setState({
+            offlineText: "",
+            showWelcomeScreen: !accessToken || !isTokenValid,
+        })
     }
 
     componentWillUnmount() {
