@@ -29,6 +29,7 @@ class InfoAlert extends Alert {
     }
 }
 
+// Added offline alert
 class OfflineAlert extends Alert {
     constructor(props) {
         super(props)

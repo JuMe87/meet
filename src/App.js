@@ -6,7 +6,7 @@ import CitySearch from "./CitySearch"
 import NumberOfEvents from "./NumberOfEvents"
 import { getEvents, extractLocations, checkToken, getAccessToken } from "./api"
 import { OfflineAlert } from "./Alert"
-import WelcomeScreen from "./WelcomeScreen"
+// import WelcomeScreen from "./WelcomeScreen"
 
 class App extends Component {
     state = {
@@ -39,7 +39,7 @@ class App extends Component {
         if (!navigator.onLine) {
             this.setState({
                 offlineText:
-                    "Your are currently offline. The displayed events might not be up to date.",
+                    "Your are currently offline. Event details might be out of date.",
             })
         } else {
             this.setState({
@@ -120,12 +120,12 @@ class App extends Component {
 
                 <OfflineAlert text={offlineText} />
 
-                <WelcomeScreen
+                {/* <WelcomeScreen
                     showWelcomeScreen={this.state.showWelcomeScreen}
                     getAccessToken={() => {
                         getAccessToken()
                     }}
-                />
+                /> */}
             </div>
         )
     }
