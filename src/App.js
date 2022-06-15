@@ -6,7 +6,7 @@ import CitySearch from "./CitySearch"
 import NumberOfEvents from "./NumberOfEvents"
 import { getEvents, extractLocations, checkToken, getAccessToken } from "./api"
 import { OfflineAlert } from "./Alert"
-import WelcomeScreen from "./WelcomeScreen"
+// import WelcomeScreen from "./WelcomeScreen"
 import {
     ScatterChart,
     Scatter,
@@ -14,6 +14,7 @@ import {
     YAxis,
     CartesianGrid,
     Tooltip,
+    ResponsiveContainer,
 } from "recharts"
 
 class App extends Component {
@@ -133,27 +134,22 @@ class App extends Component {
 
                 <h4>Events in each city</h4>
 
-                <ScatterChart
-                    width={400}
-                    height={400}
-                    margin={{
-                        top: 20,
-                        right: 20,
-                        bottom: 20,
-                        left: 20,
-                    }}
-                >
-                    <CartesianGrid />
-                    <XAxis type="category" dataKey="city" name="city" />
-                    <YAxis
-                        type="number"
-                        dataKey="number"
-                        name="number of events"
-                        allowDecimals={false}
-                    />
-                    <Tooltip cursor={{ strokeDasharray: "3 3" }} />
-                    <Scatter data={this.getData()} fill="#8884d8" />
-                </ScatterChart>
+                <ResponsiveContainer height={400}>
+                    <ScatterChart
+                        margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
+                    >
+                        <CartesianGrid />
+                        <XAxis type="category" dataKey="city" name="city" />
+                        <YAxis
+                            allowDecimals={false}
+                            type="number"
+                            dataKey="number"
+                            name="number of events"
+                        />
+                        <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+                        <Scatter data={this.getData()} fill="#8884d8" />
+                    </ScatterChart>
+                </ResponsiveContainer>
 
                 <EventList
                     events={events}
@@ -162,12 +158,12 @@ class App extends Component {
 
                 <OfflineAlert text={offlineText} />
 
-                <WelcomeScreen
+                {/* <WelcomeScreen
                     showWelcomeScreen={this.state.showWelcomeScreen}
                     getAccessToken={() => {
                         getAccessToken()
                     }}
-                />
+                /> */}
             </div>
         )
     }
