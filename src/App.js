@@ -17,6 +17,7 @@ import {
     ResponsiveContainer,
 } from "recharts"
 import EventGenre from "./EventGenre"
+import { Col, Container, Row, Navbar } from "react-bootstrap"
 
 class App extends Component {
     state = {
@@ -123,46 +124,56 @@ class App extends Component {
             <div className="App">
                 <h1>Meet App</h1>
                 <h3>Choose your nearest city:</h3>
-                <CitySearch
-                    locations={locations}
-                    updateEvents={this.updateEvents}
-                />
-                <h3>Number of Events:</h3>
-                <NumberOfEvents
-                    numberOfEvents={numberOfEvents}
-                    updateNumberOfEvents={this.updateNumberOfEvents}
-                />
-
-                <div className="date-vis-wrapper">
-                    <EventGenre events={events} />
-                    <h3>Events in each city</h3>
-                    <ResponsiveContainer height={400}>
-                        <ScatterChart
-                            margin={{
-                                top: 20,
-                                right: 20,
-                                bottom: 20,
-                                left: 20,
-                            }}
-                        >
-                            <CartesianGrid />
-                            <XAxis type="category" dataKey="city" name="city" />
-                            <YAxis
-                                allowDecimals={false}
-                                type="number"
-                                dataKey="number"
-                                name="number of events"
-                            />
-                            <Tooltip cursor={{ strokeDasharray: "3 3" }} />
-                            <Scatter data={this.getData()} fill="#8884d8" />
-                        </ScatterChart>
-                    </ResponsiveContainer>
+                <div className="search-wrapper">
+                    <CitySearch
+                        locations={locations}
+                        updateEvents={this.updateEvents}
+                    />
+                    <h3>Number of Events:</h3>
+                    <NumberOfEvents
+                        numberOfEvents={numberOfEvents}
+                        updateNumberOfEvents={this.updateNumberOfEvents}
+                    />
                 </div>
 
-                <EventList
-                    events={events}
-                    numberOfEvents={this.state.numberOfEvents}
-                />
+                <div className="data-vis">
+                    <div className="data-vis-wrapper">
+                        <EventGenre events={events} />
+                        <ResponsiveContainer height={400}>
+                            <ScatterChart
+                                margin={{
+                                    top: 20,
+                                    right: 20,
+                                    bottom: 10,
+                                    left: 10,
+                                }}
+                            >
+                                <CartesianGrid />
+                                <XAxis
+                                    type="category"
+                                    dataKey="city"
+                                    name="City"
+                                />
+                                <YAxis
+                                    allowDecimals={false}
+                                    type="number"
+                                    dataKey="number"
+                                    name="Number of events"
+                                />
+                                <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+                                <Scatter data={this.getData()} fill="#76c893" />
+                            </ScatterChart>
+                        </ResponsiveContainer>
+                    </div>
+                </div>
+
+                <Container fluid>
+                    <Row className="justify-content-md-center">
+                        <Col xs={12} md={6} xl={6}>
+                            <EventList events={events} />
+                        </Col>
+                    </Row>
+                </Container>
 
                 <OfflineAlert text={offlineText} />
 

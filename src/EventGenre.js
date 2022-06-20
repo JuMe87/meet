@@ -26,11 +26,11 @@ const EventGenre = ({ events }) => {
     }, [events])
 
     const colors = [
-        "#4cc9f0",
-        "#319b48",
-        "#4361ee",
-        "#c0557e",
+        "#f72585",
+        "#7209b7",
         "#3a0ca3",
+        "#4361ee",
+        "#4cc9f0",
         "#480ca8",
     ]
     const genreLabels = ({ x, y, cx, cy, name, percent, index }) => {
@@ -49,36 +49,24 @@ const EventGenre = ({ events }) => {
     }
 
     return (
-        <div className="pie-container">
-            <h2>Event Genres by total events</h2>
-            <ResponsiveContainer height={400}>
-                <PieChart
-                    width={400}
-                    height={400}
-                    margin={{
-                        top: 20,
-                        right: 20,
-                        bottom: 20,
-                        left: 0,
-                    }}
+        <ResponsiveContainer height={400}>
+            <PieChart width={400} height={400}>
+                <Pie
+                    data={data}
+                    cx={200}
+                    cy={200}
+                    labelLine={false}
+                    outerRadius={80}
+                    fill="#8884d8"
+                    dataKey="value"
+                    label={genreLabels}
                 >
-                    <Pie
-                        data={data}
-                        cx={200}
-                        cy={200}
-                        labelLine={false}
-                        outerRadius={80}
-                        fill="#8884d8"
-                        dataKey="value"
-                        label={genreLabels}
-                    >
-                        {data.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={colors[index]} />
-                        ))}
-                    </Pie>
-                </PieChart>
-            </ResponsiveContainer>
-        </div>
+                    {data.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={colors[index]} />
+                    ))}
+                </Pie>
+            </PieChart>
+        </ResponsiveContainer>
     )
 }
 
