@@ -33,7 +33,7 @@ const EventGenre = ({ events }) => {
         "#4cc9f0",
         "#480ca8",
     ]
-    const genreLabels = ({ x, y, cx, cy, name, percent, index }) => {
+    const genreLabels = ({ x, y, cx, name, percent, index }) => {
         return (
             <text
                 style={{ fontSize: "13px" }}
