@@ -1,4 +1,15 @@
-# meet App
+# Achievement 4 Project:  Meet App
+
+## Table of Contents
+
+-   [Objective](#Objective)
+-   [Features and Requirements](#Features-and-Requirements)
+-   [Technical Requirements](#Technical-Requirements)
+-   [Setup](#setup)
+-   [Useful commands](#useful-commands)
+-   [Screenshots](#screenshots)
+
+## Objective
 
 This is a serverless, progressive web application (PWA) with React using a  test-driven development (TDD) technique in order to enable user to see events taking place in their city. The application uses the Google  Calendar API to fetch upcoming events.
 
@@ -153,3 +164,8 @@ This is a serverless, progressive web application (PWA) with React using a  tes
 -   Given the user wanted to know the number of upcoming events in each city
 -   When the user opens the app
 -   Then the user should see a chart with the number of upcoming events in each city.
+
+## Screenshots
+
+![Screenshot of events' list](./assets/Screenshot_Overview%20Events.png?raw=true "Overview")
+![Screenshot of individual location](./assets/Screenshot_individual%20location.png?raw=true "Single View")
